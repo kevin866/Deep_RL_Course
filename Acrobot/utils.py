@@ -138,6 +138,7 @@ resize = torchvision.transforms.Compose([torchvision.transforms.ToPILImage(),
 
 
 def get_screen(env):
+    env.render(mode='human')
     screen = env.render(mode='rgb_array').transpose(
         (2, 0, 1))  # transpose into torch order (CHW)
 

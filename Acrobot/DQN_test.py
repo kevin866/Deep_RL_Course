@@ -1,7 +1,8 @@
 import torch
 import gym
 from utils import get_screen
-
+import pygame
+import time
 # Import environment
 env = gym.make('Acrobot-v1')
 # Define model and load pre-trained weights
@@ -16,7 +17,6 @@ num_test_episodes = 30
 
 episodes_passed = 0
 acc_episodic_reward = 0.0
-
 while episodes_passed < num_test_episodes:
     # Choose action greedily
     action = trained_Q_network.select_action(state)
@@ -28,6 +28,7 @@ while episodes_passed < num_test_episodes:
     # Add to accumulative reward
     acc_episodic_reward += reward
     # When episode is done - reset and print
+    time.sleep(0.02)
     if done:
         # Print acc. reward
         print('Episode {}\tAccumulated Reward: {:.2f}\t'.format(
