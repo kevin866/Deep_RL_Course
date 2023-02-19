@@ -28,7 +28,6 @@ while episodes_passed < num_test_episodes:
     # Add to accumulative reward
     acc_episodic_reward += reward
     # When episode is done - reset and print
-    time.sleep(0.02)
     if done:
         # Print acc. reward
         print('Episode {}\tAccumulated Reward: {:.2f}\t'.format(
